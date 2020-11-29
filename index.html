@@ -50,6 +50,32 @@
             return result
         }
 
+        function game(){
+            let playerSelection
+            let currentGame
+            let playerScore = 0
+            let computerScore = 0
+            for (i = 0; i < 5; i ++){
+                playerSelection = prompt("Chose Rock, Paper or Scissors")
+                currentGame = playRound(playerSelection, computerPlay())
+                console.log(currentGame)
+                if (currentGame.slice(4,8) === "Lose"){
+                    computerScore++
+                }
+                if (currentGame.slice(4,8) === "Win!"){
+                    playerScore++
+                }
+            }
+            if (computerScore === playerScore){
+                console.log("Tie")
+            }
+            else if (computerScore < playerScore){
+                console.log("Player Wins!!")
+            }
+            else {
+                console.log("Computer Wins D:")
+            }
+        }
     </script>
 </body>
 </html>
