@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay(){
+            const randomNumber = Math.floor(Math.random() * 3);
+            switch (randomNumber){
+                case 0:
+                    return "Rock"
+                    break
+                case 1:
+                    return "Paper"
+                    break
+                default:
+                    return "Scissors"
+                    break
+            }
+        }
+
+        function capitalize(string){ 
+            return string[0].toUpperCase() + string.slice(1).toLowerCase()
+        }
+
+        function playRound(playerSelection, computerSelection){
+            let result
+            const rock = "Rock"
+            const paper = "Paper"
+            const scissors = "Scissors"
+            const playerSelectionCapitalized = capitalize(playerSelection)
+            if (playerSelectionCapitalized === computerSelection){
+                result = "Tie, both player chose " + computerSelection
+            } 
+            else if ((playerSelectionCapitalized === rock) && (computerSelection === paper)) {
+                result = "You Lose! " + computerSelection + " beats " + playerSelectionCapitalized
+            }
+            else if ((playerSelectionCapitalized === paper) && (computerSelection === scissors)) {
+                result = "You Lose! " + computerSelection + " beats " + playerSelectionCapitalized
+            }
+            else if ((playerSelectionCapitalized === scissors) && (computerSelection === rock)) {
+                result = "You Lose! " + computerSelection + " beats " + playerSelectionCapitalized
+            }
+            else {
+                result = "You Win! " + playerSelectionCapitalized + " beats " + computerSelection
+            }
+            return result
+        }
+
+    </script>
+</body>
+</html>
